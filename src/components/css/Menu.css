@@ -1,0 +1,39 @@
+
+/* Header */
+#cerrar-sesion {
+  padding: 8px;
+  position: absolute;
+  right: 10px;
+}
+
+#cerrar-sesion:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f2f5";
+  color: #ffffff;
+  font-size: 20px;
+}
+
+header {
+  background-color: var(--obs-color);
+  box-shadow: unset;
+  padding: 20px 20px 0 20px;
+}
+
+header * {
+  box-shadow: unset;
+}
+
+header li {
+  text-transform: capitalize;
+}
+
+nav, .nav-wrapper {
+  background-color: inherit;
+}
+
+.btn-menu.active {
+  color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  height: -webkit-fill-available;
+}
