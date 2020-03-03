@@ -4,7 +4,7 @@ export default class Slider extends Component {
   state = {
     loading: false,
     slideIndex: 1, 
-    slideLength: 3
+    slideLength: 10
   };
 
   componentDidMount() {
