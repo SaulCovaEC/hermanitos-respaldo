@@ -6,13 +6,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
 }
 
 /* Elementos */
 :root {
-  --verder: #7db044;
+  --verde: #7db044;
   --naranja: #e7bb2c;
-  --azul: #363c7d;
+  --azul: #00008b;
   --amarillo: #f8df2d;
   --rojo: #d62c2c;
 }
@@ -100,7 +101,7 @@ ul.ant-pagination.ant-table-pagination {
   margin: auto;
   padding: 10px;
   position: absolute;
-  background-color: #00008b;
+  background-color: var(--azul);
   height: 100px;
   width: 250px;
   z-index: 100;
@@ -248,6 +249,112 @@ ul.ant-pagination.ant-table-pagination {
   width: 100%;
 }
 
+.proyecto .ant-row {
+  margin: 20px;
+}
+
+.text-important {
+  text-align: center;
+  font-size: 16px;
+  padding: 15px;
+}
+
+.text-enfasis {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--azul);
+}
+
+.proyecto {
+  padding: 20px;
+}
+
+.title-section span {
+  font-size: 24px;
+}
+
+.oportunidades .registrar-curriculo {
+  background-color: var(--verde);
+}
+
+.oportunidades .ant-col .subtitle {
+  color: var(--azul);
+}
+.oportunidades .ant-col .title {
+  font-size: 20px;
+  color: var(--azul);
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.oportunidades .ant-col {
+  padding: 30px;
+  text-align: center;
+}
+
+.btn-icon {
+  height: 100px;
+  width: 100px;
+  font-size: 50px;
+  display: inline-flex;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  padding: 0;
+}
+
+.btn-icon:hover {
+  transform: rotateY(180deg);
+  transform-origin: center;
+}
+
+.btn-icon:focus {
+  outline: none;
+}
+
+.oportunidades .registrar-empleo {
+  background-color: var(--naranja);
+}
+
+.btn-icon .back-icon, .btn-icon .front-icon {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  height: inherit;
+  width: inherit;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.btn-icon .front-icon {
+  border: 2px solid var(--azul);
+  color: var(--azul);
+}
+
+.btn-icon .back-icon {
+  transform: rotateY(180deg);
+  margin-left: -100px;
+  background-color: var(--azul);
+  color: #fff;
+  border: 2px solid #fff;
+
+}
+
+.informacion {
+  background-color: var(--azul);
+  padding: 30px;
+  color: #fff;
+}
+
+.informacion .ant-col {
+  padding: 20px;
+}
+
+.informacion .ant-divider {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
 #header-section .nav-menu {
   position: absolute;
   top: 50px;
@@ -256,6 +363,11 @@ ul.ant-pagination.ant-table-pagination {
   height: 50px;
   background-color: #fff;
   box-shadow: 1px 1px 5px 0px #8c8c8c;
+}
+
+#mapa {
+  width: 100%;
+  height: 300px;
 }
 
 .logo-img {
@@ -349,9 +461,7 @@ tbody tr {
 
 /* Footer */
 footer.ant-layout-footer {
-  position: fixed;
   width: 100%;
-  bottom: 0;
   padding: 0;
 }
 

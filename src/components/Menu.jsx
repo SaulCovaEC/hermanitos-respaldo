@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Menu, Layout, Button } from 'antd';
 import { Link } from 'react-router-dom';
-import { FacebookOutlined, InstagramOutlined, WhatsAppOutlined, LinkedinOutlined, PhoneOutlined, MailOutlined } from '@ant-design/icons';
+import { FacebookOutlined, InstagramOutlined, WhatsAppOutlined, LinkedinOutlined, PhoneOutlined } from '@ant-design/icons';
 
 const { Header } = Layout;
 
