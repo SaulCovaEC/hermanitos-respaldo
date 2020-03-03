@@ -13,11 +13,12 @@ const itemsMenu = [
 const iLength = itemsMenu.length;
 
 export default class NavMenu extends Component {
-  state = {
-    lang: 'es',
-    collapsed: false
+  constructor(...props) {
+    super(...props)
+    this.state = {
+      collapsed: false
+    }
   }
-  
 
   onCollapse = collapsed => {
     this.setState({ collapsed });
@@ -38,16 +39,6 @@ export default class NavMenu extends Component {
     }
     return menu;
   }
-
-  changeLang = (e) => {
-    let btnLang = e.target.id;
-    if(btnLang !== this.state.lang){
-      this.setState({
-        lang: btnLang
-      })
-    }
-  }
-
 
   render() {
     return (
@@ -73,8 +64,8 @@ export default class NavMenu extends Component {
                 mode="horizontal"
                 className="idioma"
               >
-                <Menu.Item key="1"><Button type="link" className={(this.state.lang === 'es') ? "es btn-lang activo" : "es btn-lang"} id="es" onClick={this.changeLang}><span>ES</span><img src="./img/component/venezuela.svg" alt="Español"/></Button></Menu.Item>
-                <Menu.Item key="2"><Button type="link" className={(this.state.lang === 'pt') ? "pt btn-lang activo" : "pt btn-lang"} id="pt" onClick={this.changeLang}><span>PT</span><img src="./img/component/brasil.svg" alt="Portugues"/></Button></Menu.Item>
+                <Menu.Item key="1"><Button type="link" className={(this.state.lang === 'es') ? "es btn-lang activo" : "es btn-lang"} id="es" onClick={this.props.changeLang('es')}><span>ES</span><img src="./img/component/venezuela.svg" alt="Español"/></Button></Menu.Item>
+                <Menu.Item key="2"><Button type="link" className={(this.state.lang === 'pt') ? "pt btn-lang activo" : "pt btn-lang"} id="pt" onClick={this.props.changeLang('pt')}><span>PT</span><img src="./img/component/brasil.svg" alt="Portugues"/></Button></Menu.Item>
               </Menu>
             </div>
             <div className="nav-menu">
@@ -83,7 +74,7 @@ export default class NavMenu extends Component {
                 className="navmenu"
               >
                 <Menu.Item key="1"><a href="/">Inicio</a></Menu.Item>
-                <Menu.Item key="2"><a href="/informacion">Informacion</a></Menu.Item>
+                <Menu.Item key="2"><a href="/informacion">Informacion importante</a></Menu.Item>
                 <Menu.Item key="3"><a href="/proyecto-hermanito">Proyecto Hermanitos</a></Menu.Item>
                 <Menu.Item key="4"><a href="/galeria">Galeria</a></Menu.Item>
                 <Menu.Item key="5"><a href="/ofrecer-empleo">Ofrecer empleo</a></Menu.Item>

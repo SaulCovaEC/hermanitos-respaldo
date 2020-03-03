@@ -24,7 +24,8 @@ class App extends Component {
     this.state = {
       sesion: (localStorage.getItem('sesion')),
       isAuthenticated: false,
-      isAuthenticating: true
+      isAuthenticating: true, 
+      lang: 'es',
     };
     this.userHasAuthenticated = this.userHasAuthenticated.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
@@ -48,6 +49,15 @@ class App extends Component {
     this.setState({
       isAuthenticated: authenticated 
     });
+  }
+
+  changeLang = lang => {
+    let btnLang = lang;
+    if(btnLang !== this.state.lang){
+      this.setState({
+        lang: btnLang
+      })
+    }
   }
 
   render() {
