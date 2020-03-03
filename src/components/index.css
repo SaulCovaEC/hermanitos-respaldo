@@ -249,6 +249,10 @@ ul.ant-pagination.ant-table-pagination {
   width: 100%;
 }
 
+.slider-back {
+  width: 100%;
+}
+
 .proyecto .ant-row {
   margin: 20px;
 }
