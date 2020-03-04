@@ -70,7 +70,7 @@ class App extends Component {
       !this.state.isAuthenticating &&
       <Layout>
         {
-          (url.slice(0, 6) === '/admin') ? <div><AdminMenu /><Header style={{ background: '#fff', padding: 0 }}><button id="logout" className="default-btn" onClick={this.handleLogout}><UnlockFilled /></button></Header></div> : <NavMenu />
+          (url.slice(0, 6) === '/admin') ? <div><AdminMenu /><Header style={{ background: '#fff', padding: 0 }}><button id="logout" className="default-btn" onClick={this.handleLogout}><UnlockFilled /></button></Header></div> : <NavMenu lang={this.state.lang} changeLang={this.changeLang}/>
         }
                 
         <Layout>

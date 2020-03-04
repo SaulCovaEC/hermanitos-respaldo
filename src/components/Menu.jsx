@@ -64,8 +64,8 @@ export default class NavMenu extends Component {
                 mode="horizontal"
                 className="idioma"
               >
-                <Menu.Item key="1"><Button type="link" className={(this.state.lang === 'es') ? "es btn-lang activo" : "es btn-lang"} id="es" onClick={this.props.changeLang('es')}><span>ES</span><img src="./img/component/venezuela.svg" alt="Español"/></Button></Menu.Item>
-                <Menu.Item key="2"><Button type="link" className={(this.state.lang === 'pt') ? "pt btn-lang activo" : "pt btn-lang"} id="pt" onClick={this.props.changeLang('pt')}><span>PT</span><img src="./img/component/brasil.svg" alt="Portugues"/></Button></Menu.Item>
+                <Menu.Item key="1"><Button type="link" className={(this.props.lang === 'es') ? "es btn-lang activo" : "es btn-lang"} id="es" onClick={this.props.changeLang('es')}><span>ES</span><img src="./img/component/venezuela.svg" alt="Español"/></Button></Menu.Item>
+                <Menu.Item key="2"><Button type="link" className={(this.props.lang === 'pt') ? "pt btn-lang activo" : "pt btn-lang"} id="pt" onClick={this.props.changeLang('pt')}><span>PT</span><img src="./img/component/brasil.svg" alt="Portugues"/></Button></Menu.Item>
               </Menu>
             </div>
             <div className="nav-menu">
