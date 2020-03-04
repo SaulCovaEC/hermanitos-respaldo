@@ -29,6 +29,7 @@ class App extends Component {
     };
     this.userHasAuthenticated = this.userHasAuthenticated.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.changeLang = this.changeLang.bind(this);
   }
   
   async componentDidMount() {
@@ -51,13 +52,10 @@ class App extends Component {
     });
   }
 
-  changeLang = lang => {
-    let btnLang = lang;
-    if(btnLang !== this.state.lang){
-      this.setState({
-        lang: btnLang
-      })
-    }
+  changeLang = btnLang => {
+    this.setState({
+      lang: btnLang
+    });
   }
 
   render() {
