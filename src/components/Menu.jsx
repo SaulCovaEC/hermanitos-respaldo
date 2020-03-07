@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Menu, Layout, Button } from 'antd';
+import { Menu, Layout, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { FacebookOutlined, InstagramOutlined, WhatsAppOutlined, LinkedinOutlined, PhoneOutlined } from '@ant-design/icons';
 

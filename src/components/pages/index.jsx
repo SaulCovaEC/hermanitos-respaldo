@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Divider, Modal, Card } from 'antd';
+import { Row, Col, Divider, Modal, Card, Form, Input } from 'antd';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
@@ -25,8 +25,12 @@ export default class Home extends Component {
 
   registrarCurriculo = () => {
     confirm({
-      title: 'Registrar curriculo',
-      content: 'Some descriptions',
+      title: (this.props.lang === 'es') ? `Registra tu curriculo` : `Registre seu currículo`,
+      content: (
+        <Form>
+          <Input name="nome" className="input-form" placeholder={(this.props.lang === 'es') ? `Nombre` : `Nome`}></Input>
+        </Form>
+        ),
       okText: 'Enviar curriculo',
       cancelText: 'Cancelar'
     });
@@ -35,7 +39,9 @@ export default class Home extends Component {
   registrarEmpleo = () => {
     confirm({
       title: 'Registrar oferta de empleo',
-      content: 'Some descriptions',
+      content: (
+        <Form></Form>
+      ),
       okText: 'Enviar empleo',
       cancelText: 'Cancelar',
       onOk() {
@@ -52,6 +58,7 @@ export default class Home extends Component {
   }
 
   render() {
+    
     return (
       <section id="home">
         <Slider />
