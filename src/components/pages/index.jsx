@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Divider, Modal, Card } from 'antd';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAddressCard, faUserGraduate, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAddressCard, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 
 import Slider from './Slider';
 
@@ -11,11 +11,16 @@ const { Meta } = Card;
 
 
 export default class Home extends Component {
-  state = {
-    loading: false,
-  };
+  constructor(...props) {
+    super(...props)
+    this.state = {
+      loading: false,
+      lang: this.props.lang
+    };
+  }
 
   componentDidMount() {
+    this.props.location('inicio');
   }
 
   registrarCurriculo = () => {
@@ -42,36 +47,41 @@ export default class Home extends Component {
     });
   }
 
+  masInfo = () => {
+    return (this.props.lang === 'es') ? `Mas informacion` : `Mais informação`;
+  }
+
   render() {
     return (
-      <section className="home">
+      <section id="home">
         <Slider />
         <div className="proyecto">
-          <Divider className="title-section">Conozca el proyecto</Divider>
+          <Divider className="title-section">{(this.props.lang === 'es') ? `Conozca el proyecto` : `Conheça o projeto`}</Divider>
           <Row justify="space-around" align="middle">
             <Col span={11}>
-            <p className="text-important">Estamos aquí para acoger e integrar a nuestros hermanos venezolanos en Manaos, contribuyendo a su desarrollo y mejora de la calidad de vida.
-            Traemos informaciones, servicios de ciudadanía, noticias y conectamos oportunidades para quien busca trabajar y para quien busca un perfil profesional calificado.</p>
-            <p className="text-enfasis">¡Bienvenido a hermanito!</p>
+            <p className="text-important">{(this.props.lang === 'es') ? `Estamos aquí para acoger e integrar a nuestros hermanos venezolanos en Manaos, contribuyendo a su desarrollo y mejora de la calidad de vida.
+            Traemos informaciones, servicios de ciudadanía, noticias y conectamos oportunidades para quien busca trabajar y para quien busca un perfil profesional calificado.` : `Estamos aqui para acolher e integrar nossos irmãos venezuelanos em Manaus, contribuindo para o desenvolvimento e melhoria da qualidade de vida.
+                         Trazemos informações, serviços de cidadania, notícias e conectamos oportunidades para quem quer trabalhar e para quem procura um perfil profissional qualificado.`}</p>
+            <p className="text-enfasis">{(this.props.lang === 'es') ? `¡Bienvenido a hermanito!` : `Bem-vindo ao hemanito!`}</p>
             </Col>
             <Col span={11}>
-            <iframe width="580" height="320" src="https://www.youtube.com/embed/7B3GoEzFSX0" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <iframe width="580" title="Video Bienvenida" height="320" src="https://www.youtube.com/embed/7B3GoEzFSX0" frameBorder="0" allowFullScreen/>
             </Col>
           </Row>
         </div>
         <div className="oportunidades">
           <Row justify="space-around" align="middle">
             <Col span={12} className="registrar-curriculo">
-              <p className="title">Buscando Oportunidad</p>
-              <p className="subtitle">Registra tu curriculo</p>
+              <p className="title">{(this.props.lang === 'es') ? `Buscando Oportunidad` : `Procurando Oportunidade`}</p>
+              <p className="subtitle">{(this.props.lang === 'es') ? `Registra tu curriculo` : `Registre seu currículo`}</p>
               <button className="btn-icon btn-registrar-curriculo" onClick={this.registrarCurriculo}>
                 <FontAwesomeIcon icon={faAddressCard} className="front-icon" fixedWidth/>
                 <FontAwesomeIcon icon={faAddressCard} className="back-icon" fixedWidth/>
               </button>
             </Col>
             <Col span={12} className="registrar-empleo">
-              <p className="title">Encontrar Profesionales</p>
-              <p className="subtitle">Solicitar indicaciones</p>
+              <p className="title">{(this.props.lang === 'es') ? `Encontrar Profesionales` : `Encontre Profissionais`}</p>
+              <p className="subtitle">{(this.props.lang === 'es') ? `Solicitar indicaciones` : `Solicitar instruções`}</p>
               <button className="btn-icon btn-registrar-empleo" onClick={this.registrarEmpleo}>
                 <FontAwesomeIcon icon={faUserGraduate} className="front-icon" fixedWidth/>
                 <FontAwesomeIcon icon={faUserGraduate} className="back-icon" fixedWidth/>
@@ -81,7 +91,7 @@ export default class Home extends Component {
         </div>
         <div className="informacion">
           <Divider orientation="left">
-            Informacion importante
+          {(this.props.lang === 'es') ? `Informacion importante` : `Informação importante`}
           </Divider>
           <Row>
             <Col className="gutter-row" span={8}>
@@ -90,10 +100,10 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Conociendo tu espacio" src="./img/component/conociendo-tu-espacio.jpg" />}
                 actions={[
-                  <Link to="./login">Mas informacion<FontAwesomeIcon icon={faAngleRight} className="card-icon" fixedWidth/></Link>
+                  <Link to={(this.props.lang === 'es') ? `/informacion/conociendo-tu-espacio` : `/informacao/conhecendo-seu-espaco`}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title="CONOCIENDO TU ESPACIO" description="Acabo de llegar a un lugar nuevo? ¡Información para ayudarlo a situarse y adaptarse!" />
+                <Meta title={(this.props.lang === 'es') ? `CONOCIENDO TU ESPACIO` : `CONHECENDO O SEU ESPAÇO`} description={(this.props.lang === 'es') ? `Acabo de llegar a un lugar nuevo? ¡Información para ayudarlo a situarse y adaptarse!` : `Acabei de chegar em um novo lugar? Informações para ajudá-lo a se posicionar e se adaptar!`} />
               </Card>
               </div>
             </Col>
@@ -103,10 +113,10 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Cultura y convivencia" src="./img/component/cultura-y-convivencia.jpg" />}
                 actions={[
-                  <Link to="./login">Mas informacion<FontAwesomeIcon icon={faAngleRight} className="card-icon" fixedWidth/></Link>
+                  <Link to={(this.props.lang === 'es') ? `/informacion/cultura-y-convivencia` : `/informacao/cultura-e-convivencia`}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title="CULTURA Y CONVIVENCIA" description="Un nuevo país tiene normas y culturas diferentes a las suyas. Comprende aquí un poco sobre Brasil." />
+                <Meta title={(this.props.lang === 'es') ? `CULTURA Y CONVIVENCIA` : `CULTURA E CONVIVÊNCIA`} description={(this.props.lang === 'es') ? `Un nuevo país tiene normas y culturas diferentes a las suyas. Comprende aquí un poco sobre Brasil.` : `Um novo país tem normas e culturas diferentes das suas. Entenda aqui um pouco sobre o Brasil.` } />
               </Card>
               </div>
             </Col>
@@ -116,10 +126,10 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Documentacion" src="./img/component/documentacion.jpg" />}
                 actions={[
-                  <Link to="./login">Mas informacion<FontAwesomeIcon icon={faAngleRight} className="card-icon" fixedWidth/></Link>
+                  <Link to={(this.props.lang === 'es') ? `/informacion/documentacion` : `/informacao/documentacao`}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title="DOCUMENTACIÓN" description="Documentación requerida para vivir en Brasil. Lo que necesitas saber para vivir legalmente." />
+                <Meta title={(this.props.lang === 'es') ? `DOCUMENTACIÓN` : `DOCUMENTAÇÃO`} description={(this.props.lang === 'es') ? `Documentación requerida para vivir en Brasil. Lo que necesitas saber para vivir legalmente.` : `Documentação necessária para morar no Brasil. O que você precisa saber para viver legalmente.`} />
               </Card>
               </div>
             </Col>
@@ -129,10 +139,10 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Trabajo" src="./img/component/trabajo.jpg" />}
                 actions={[
-                  <Link to="./login">Mas informacion<FontAwesomeIcon icon={faAngleRight} className="card-icon" fixedWidth/></Link>
+                  <Link to={(this.props.lang === 'es') ? `/informacion/trabajo` : `/informacao/trabalho`}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title="TRABAJO" description="El trabajo es esencial para su mantenimiento en Brasil. Consejos sobre cómo buscar oportunidades e ingresar al mercado laboral." />
+                <Meta title={(this.props.lang === 'es') ? `TRABAJO` : `TRABALHO`} description={(this.props.lang === 'es') ? `El trabajo es esencial para su mantenimiento en Brasil. Consejos sobre cómo buscar oportunidades e ingresar al mercado laboral.` : `O trabalho é essencial para sua manutenção no Brasil. Dicas sobre como procurar oportunidades e entrar no mercado de trabalho.`} />
               </Card>
               </div>
             </Col>
@@ -142,10 +152,10 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Salud" src="./img/component/salud.jpg" />}
                 actions={[
-                  <Link to="./login">Mas informacion<FontAwesomeIcon icon={faAngleRight} className="card-icon" fixedWidth/></Link>
+                  <Link to={(this.props.lang === 'es') ? `/informacion/salud` : `/informacao/saude`}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title="SALUD" description="El Sistema de Salud de Brasil es gratuito, pero necesita la tarjeta SUS para acceder a los servicios." />
+                <Meta title={(this.props.lang === 'es') ? `SALUD` : `SAÚDE`} description={(this.props.lang === 'es') ? `El Sistema de Salud de Brasil es gratuito, pero necesita la tarjeta SUS para acceder a los servicios.` : `O sistema de saúde brasileiro é gratuito, mas você precisa do cartão SUS para acessar os serviços.`} />
               </Card>
               </div>
             </Col>
@@ -155,10 +165,10 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Educacion" src="./img/component/educacion.jpg" />}
                 actions={[
-                  <Link to="./login">Mas informacion<FontAwesomeIcon icon={faAngleRight} className="card-icon" fixedWidth/></Link>
+                  <Link to={(this.props.lang === 'es') ? `/informacion/educacion` : `/informacao/educacao`}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title="EDUCACIÓN" description="La educación en Brasil es un derecho, incluso para los inmigrantes. Importante saber los lugares y el período de registro." />
+                <Meta title={(this.props.lang === 'es') ? `EDUCACIÓN` : `EDUCAÇÃO`} description={(this.props.lang === 'es') ? `La educación en Brasil es un derecho, incluso para los inmigrantes. Importante saber los lugares y el período de registro.` : `A educação no Brasil é um direito, mesmo para imigrantes. Importante conhecer os locais e o período de inscrição.`} />
               </Card>
               </div>
             </Col>
@@ -169,7 +179,7 @@ export default class Home extends Component {
         <div className="donacion"></div>
         <div className="parceros"></div>
         <div className="map">
-          <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0256844895443!2d-60.01512628555877!3d-3.0878183411144224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c1bb6e6e04aa3%3A0xaa1055237a454ef9!2sEspa%C3%A7o%20Hermanitos!5e0!3m2!1ses-419!2sbr!4v1583271700375!5m2!1ses-419!2sbr"></iframe>
+          <iframe id="mapa" title="Mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0256844895443!2d-60.01512628555877!3d-3.0878183411144224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c1bb6e6e04aa3%3A0xaa1055237a454ef9!2sEspa%C3%A7o%20Hermanitos!5e0!3m2!1ses-419!2sbr!4v1583271700375!5m2!1ses-419!2sbr"/>
         </div>
       </section>
     );

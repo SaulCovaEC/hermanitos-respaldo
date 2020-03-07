@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Routes from "./Routes/Routes";
-import { ifSesion, logout } from "./helpers/Auth";
+import { ifSesion, logout, updateLang, ifLang } from "./helpers/Auth";
 import { Layout } from 'antd';
 import { UnlockFilled } from '@ant-design/icons';
 
@@ -24,8 +24,9 @@ class App extends Component {
     this.state = {
       sesion: (localStorage.getItem('sesion')),
       isAuthenticated: false,
-      isAuthenticating: true, 
-      lang: 'es',
+      isAuthenticating: true,
+      location: '',
+      lang: ''
     };
     this.userHasAuthenticated = this.userHasAuthenticated.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
@@ -34,6 +35,7 @@ class App extends Component {
   
   async componentDidMount() {
     await (ifSesion()) ? this.userHasAuthenticated(true) : this.userHasAuthenticated(false);
+    await (ifLang()) ? this.changeLang(localStorage.getItem('lang')) : this.changeLang('pt');
     this.setState({ isAuthenticating: false });
   }
 
@@ -56,29 +58,33 @@ class App extends Component {
     this.setState({
       lang: btnLang
     });
+    updateLang(btnLang);
+  }
+
+  updateLocation = newLocation => {
+    this.setState({
+      location: newLocation
+    })
   }
 
   render() {
     const childProps = {
       isAuthenticated: this.state.isAuthenticated,
-      userHasAuthenticated: this.userHasAuthenticated
+      userHasAuthenticated: this.userHasAuthenticated,
+      location: this.updateLocation,
+      lang: this.state.lang
     }
     let url = window.location.pathname;
     return (
       !this.state.isAuthenticating &&
       <Layout>
         {
-          (url.slice(0, 6) === '/admin') ? <div><AdminMenu /><Header style={{ background: '#fff', padding: 0 }}><button id="logout" className="default-btn" onClick={this.handleLogout}><UnlockFilled /></button></Header></div> : <NavMenu lang={this.state.lang} changeLang={this.changeLang}/>
+          (url.slice(0, 6) === '/admin') ? <div><AdminMenu /><Header style={{ background: '#fff', padding: 0 }}><button id="logout" className="default-btn" onClick={this.handleLogout}><UnlockFilled /></button></Header></div> : <NavMenu lang={this.state.lang} changeLang={this.changeLang} location={this.state.location} updateLocation={this.updateLocation}/>
         }
-                
-        <Layout>
-                    
+      
           <section id="body-section">
-            {console.log(window.location.pathname)}
-            <Routes childProps={childProps} />
+            <Routes childProps={childProps}/>
           </section>
-            
-        </Layout>
         <Footer>
           {
             (url.slice(0, 6) === '/admin') ? <FooterAdmin /> : <FooterNormal />
