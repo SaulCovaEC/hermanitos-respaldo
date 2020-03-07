@@ -9,7 +9,7 @@ export default class Informacion extends Component {
     };
   }
   async componentDidMount() {
-    await this.props.updateLocation(this.props.pathLocation);
+    await this.props.location(this.props.pathLocation);
     console.log(this.props.pathLocation);
   }
 

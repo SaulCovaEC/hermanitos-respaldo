@@ -100,7 +100,7 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Conociendo tu espacio" src="./img/component/conociendo-tu-espacio.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/informacion/conociendo-tu-espacio` : `/informacao/conhecendo-seu-espaco`}>{this.masInfo()}</Link>
+                  <Link to={(this.props.lang === 'es') ? `/conociendo-tu-espacio` : `/conhecendo-seu-espaco`}>{this.masInfo()}</Link>
                 ]}
               >
                 <Meta title={(this.props.lang === 'es') ? `CONOCIENDO TU ESPACIO` : `CONHECENDO O SEU ESPAÇO`} description={(this.props.lang === 'es') ? `Acabo de llegar a un lugar nuevo? ¡Información para ayudarlo a situarse y adaptarse!` : `Acabei de chegar em um novo lugar? Informações para ajudá-lo a se posicionar e se adaptar!`} />
@@ -113,7 +113,7 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Cultura y convivencia" src="./img/component/cultura-y-convivencia.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/informacion/cultura-y-convivencia` : `/informacao/cultura-e-convivencia`}>{this.masInfo()}</Link>
+                  <Link to={(this.props.lang === 'es') ? `/cultura-y-convivencia` : `/cultura-e-convivencia`}>{this.masInfo()}</Link>
                 ]}
               >
                 <Meta title={(this.props.lang === 'es') ? `CULTURA Y CONVIVENCIA` : `CULTURA E CONVIVÊNCIA`} description={(this.props.lang === 'es') ? `Un nuevo país tiene normas y culturas diferentes a las suyas. Comprende aquí un poco sobre Brasil.` : `Um novo país tem normas e culturas diferentes das suas. Entenda aqui um pouco sobre o Brasil.` } />
@@ -126,7 +126,7 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Documentacion" src="./img/component/documentacion.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/informacion/documentacion` : `/informacao/documentacao`}>{this.masInfo()}</Link>
+                  <Link to={(this.props.lang === 'es') ? `/documentacion` : `/documentacao`}>{this.masInfo()}</Link>
                 ]}
               >
                 <Meta title={(this.props.lang === 'es') ? `DOCUMENTACIÓN` : `DOCUMENTAÇÃO`} description={(this.props.lang === 'es') ? `Documentación requerida para vivir en Brasil. Lo que necesitas saber para vivir legalmente.` : `Documentação necessária para morar no Brasil. O que você precisa saber para viver legalmente.`} />
@@ -139,7 +139,7 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Trabajo" src="./img/component/trabajo.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/informacion/trabajo` : `/informacao/trabalho`}>{this.masInfo()}</Link>
+                  <Link to={(this.props.lang === 'es') ? `/trabajo` : `/trabalho`}>{this.masInfo()}</Link>
                 ]}
               >
                 <Meta title={(this.props.lang === 'es') ? `TRABAJO` : `TRABALHO`} description={(this.props.lang === 'es') ? `El trabajo es esencial para su mantenimiento en Brasil. Consejos sobre cómo buscar oportunidades e ingresar al mercado laboral.` : `O trabalho é essencial para sua manutenção no Brasil. Dicas sobre como procurar oportunidades e entrar no mercado de trabalho.`} />
@@ -152,7 +152,7 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Salud" src="./img/component/salud.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/informacion/salud` : `/informacao/saude`}>{this.masInfo()}</Link>
+                  <Link to={(this.props.lang === 'es') ? `/salud` : `/saude`}>{this.masInfo()}</Link>
                 ]}
               >
                 <Meta title={(this.props.lang === 'es') ? `SALUD` : `SAÚDE`} description={(this.props.lang === 'es') ? `El Sistema de Salud de Brasil es gratuito, pero necesita la tarjeta SUS para acceder a los servicios.` : `O sistema de saúde brasileiro é gratuito, mas você precisa do cartão SUS para acessar os serviços.`} />
@@ -165,7 +165,7 @@ export default class Home extends Component {
                 hoverable
                 cover={<img alt="Educacion" src="./img/component/educacion.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/informacion/educacion` : `/informacao/educacao`}>{this.masInfo()}</Link>
+                  <Link to={(this.props.lang === 'es') ? `/educacion` : `/educacao`}>{this.masInfo()}</Link>
                 ]}
               >
                 <Meta title={(this.props.lang === 'es') ? `EDUCACIÓN` : `EDUCAÇÃO`} description={(this.props.lang === 'es') ? `La educación en Brasil es un derecho, incluso para los inmigrantes. Importante saber los lugares y el período de registro.` : `A educação no Brasil é um direito, mesmo para imigrantes. Importante conhecer os locais e o período de inscrição.`} />

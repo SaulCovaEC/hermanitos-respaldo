@@ -109,7 +109,7 @@ ul.ant-pagination.ant-table-pagination {
   height: 100px;
   width: 250px;
   z-index: 100;
-  margin-top: -50px;
+  margin-top: 0;
 }
 
 #header-section {
@@ -135,13 +135,13 @@ ul.ant-pagination.ant-table-pagination {
   display: inline-flex;
 }
 
-#header-section .top-bar {
+#header-section .social-bar {
   background-color: rgba(0, 0, 0, .8);
   width: 100%;
   height: 50px;
   left: 0;
   right: 0;
-  top: 50px;
+  margin-top: 50px;
 }
 
 .redes-sociales a {
@@ -149,39 +149,39 @@ ul.ant-pagination.ant-table-pagination {
   width: inherit;
 }
 
-#header-section .top-bar .ant-menu-item {
+#header-section .social-bar .ant-menu-item {
   width: 50px;
   padding: 0;
   width: 50px;
   height: 50px;
 }
 
-#header-section .top-bar .redes-sociales .ant-menu-item:hover {
+#header-section .social-bar .redes-sociales .ant-menu-item:hover {
   background-color: #ffff;
   border: unset;
 }
 
-#header-section .top-bar .redes-sociales .ant-menu-item:hover .anticon-facebook svg{
+#header-section .social-bar .redes-sociales .ant-menu-item:hover .anticon-facebook svg{
   color: #3b5998;
 }
 
-#header-section .top-bar .redes-sociales .ant-menu-item:hover .anticon-instagram svg{
+#header-section .social-bar .redes-sociales .ant-menu-item:hover .anticon-instagram svg{
   color: #125688;
 }
 
-#header-section .top-bar .redes-sociales .ant-menu-item:hover .anticon-whats-app svg{
+#header-section .social-bar .redes-sociales .ant-menu-item:hover .anticon-whats-app svg{
   color: #4dc247;
 }
 
-#header-section .top-bar .redes-sociales .ant-menu-item:hover .anticon-linkedin svg{
+#header-section .social-bar .redes-sociales .ant-menu-item:hover .anticon-linkedin svg{
   color: #007bb5;
 }
 
-#header-section .top-bar .redes-sociales .ant-menu-item:hover .anticon-phone svg{
+#header-section .social-bar .redes-sociales .ant-menu-item:hover .anticon-phone svg{
   color: var(--azul);
 }
 
-.top-bar>ul {
+.social-bar>ul {
   color: #fff;
   border: unset;
 }
@@ -366,7 +366,7 @@ ul.ant-pagination.ant-table-pagination {
   background-size: contain;
   background-position: center;
   width: auto;
-  height: 80px;
+  height: 100px;
   margin: auto;
 }
 

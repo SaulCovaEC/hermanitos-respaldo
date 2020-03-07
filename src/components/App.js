@@ -31,6 +31,7 @@ class App extends Component {
     this.userHasAuthenticated = this.userHasAuthenticated.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.changeLang = this.changeLang.bind(this);
+    this.updateLocation = this.updateLocation.bind(this);
   }
   
   async componentDidMount() {
