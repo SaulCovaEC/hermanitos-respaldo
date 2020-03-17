@@ -37,9 +37,22 @@ export default ({ childProps }) =>
     <AppliedRoute path="/saude" exact component={Informacion} props={childProps} pLocation={'saude'} />
     <AppliedRoute path="/educacao" exact component={Informacion} props={childProps} pLocation={'educacao'} />
 
-    <AppliedRoute path="/projecto-hermanitos" exact component={ProyectoHermanitos} props={childProps} />
+    <AppliedRoute path="/projeto-hermanitos" exact component={ProyectoHermanitos} props={childProps} />
     <AppliedRoute path="/ofrecer-emprego" exact component={OfrecerEmpleo} props={childProps} />
     <AppliedRoute path="/contato" exact component={Contacto} props={childProps} />
+
+    {/* Enlaces en ingles */}
+    <AppliedRoute path="/knowing-your-space" exact component={Informacion} props={childProps} pLocation={'conhecendo-seu-espaco'} />
+    <AppliedRoute path="/culture-and-coexistence" exact component={Informacion} props={childProps} pLocation={'cultura-e-convivencia'} />
+    <AppliedRoute path="/documentation" exact component={Informacion} props={childProps} pLocation={'documentacao'} />
+    <AppliedRoute path="/work" exact component={Informacion} props={childProps} pLocation={'trabalho'} />
+    <AppliedRoute path="/health" exact component={Informacion} props={childProps} pLocation={'saude'} />
+    <AppliedRoute path="/education" exact component={Informacion} props={childProps} pLocation={'educacao'} />
+    
+    <AppliedRoute path="/gallery" exact component={Galeria} props={childProps} />
+    <AppliedRoute path="/project-hermanitos" exact component={ProyectoHermanitos} props={childProps} />
+    <AppliedRoute path="/offer-employmento" exact component={OfrecerEmpleo} props={childProps} />
+    <AppliedRoute path="/contact" exact component={Contacto} props={childProps} />
 
     {/* Enlaces */}
     <AppliedRoute path="/galeria" exact component={Galeria} props={childProps} />

@@ -3,6 +3,7 @@ import { Menu, Layout, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { FacebookOutlined, InstagramOutlined, WhatsAppOutlined, LinkedinOutlined, PhoneOutlined } from '@ant-design/icons';
 
+
 const { Header } = Layout;
 const { SubMenu } = Menu;
 
@@ -10,7 +11,8 @@ export default class NavMenu extends Component {
   constructor(...props) {
     super(...props)
     this.state = {
-      current: this.props.location
+      current: this.props.location,
+      text: this.props.text
     };
   }
 
@@ -49,31 +51,31 @@ export default class NavMenu extends Component {
                     onClick={this.handleClick}
                     selectedKeys={[this.props.location]}
                   >
-                    <Menu.Item key="inicio"><Link to="/">Inicio</Link></Menu.Item>
-                    <SubMenu title={(this.props.lang === 'es') ?'Informacion importante' : 'Informação importante'}>
+                    <Menu.Item key="inicio"><Link to={this.props.text['menu-1']['link']}>{this.props.text['menu-1']['label']}</Link></Menu.Item>
+                    <SubMenu title={this.props.text['menu-2']['label']}>
                       <Menu.Item key="conhecendo-seu-espaco">
-                        <Link to={(this.props.lang === 'es') ? `/conociendo-tu-espacio` : `/conhecendo-seu-espaco`}>{(this.props.lang === 'es') ? `Conociendo tu espacio` : `Conhecendo seu espaço`}</Link>
+                        <Link to={this.props.text['menu-2-1']['link']}>{this.props.text['menu-2-1']['label']}</Link>
                       </Menu.Item>
                       <Menu.Item key="cultura-e-convivencia">
-                        <Link to={(this.props.lang === 'es') ? `/cultura-y-convivencia` : `/cultura-e-convivencia`}>{(this.props.lang === 'es') ? `Cultura y convivencia` : `Cultura e convivência`}</Link>
+                        <Link to={this.props.text['menu-2-2']['link']}>{this.props.text['menu-2-2']['label']}</Link>
                       </Menu.Item>
                       <Menu.Item key="documentacao">
-                        <Link to={(this.props.lang === 'es') ? `/documentacion` : `/documentacao`}>{(this.props.lang === 'es') ? `Documentacion` : `Documentação`}</Link>
+                        <Link to={this.props.text['menu-2-3']['link']}>{this.props.text['menu-2-3']['label']}</Link>
                       </Menu.Item>
                       <Menu.Item key="trabalho">
-                        <Link to={(this.props.lang === 'es') ? `/trabajo` : `/trabalho`}>{(this.props.lang === 'es') ? `Trabajo` : `Trabalho`}</Link>
+                        <Link to={this.props.text['menu-2-4']['link']}>{this.props.text['menu-2-4']['label']}</Link>
                       </Menu.Item>
                       <Menu.Item key="saude">
-                        <Link to={(this.props.lang === 'es') ? `/salud` : `/saude`}>{(this.props.lang === 'es') ? `Salud` : `Saude`}</Link>
+                        <Link to={this.props.text['menu-2-5']['link']}>{this.props.text['menu-2-5']['label']}</Link>
                       </Menu.Item>
                       <Menu.Item key="educacao">
-                        <Link to={(this.props.lang === 'es') ? `/educacion` : `/educacao`}>{(this.props.lang === 'es') ? `Educacion` : `Educação`}</Link>
+                        <Link to={this.props.text['menu-2-6']['link']}>{this.props.text['menu-2-6']['label']}</Link>
                       </Menu.Item>
                     </SubMenu>
-                    <Menu.Item key="projecto-hermanitos"><Link to={(this.props.lang === 'es') ? '/proyecto-hermanitos' : '/projecto-hermanitos'}>{(this.props.lang === 'es') ? 'Proyecto Hermanitos' : 'Projecto Hermanitos'}</Link></Menu.Item>
-                    <Menu.Item key="galeria"><Link to="/galeria">Galeria</Link></Menu.Item>
-                    <Menu.Item key="ofrecer-emprego"><Link to={(this.props.lang === 'es') ? '/ofrecer-empleo' : '/ofrecer-emprego'}>{(this.props.lang === 'es') ?'Ofrecer empleo' : 'Ofrecer emprego'}</Link></Menu.Item>
-                    <Menu.Item key="contato"><Link to={(this.props.lang === 'es') ? '/contacto' : '/contato'}>{(this.props.lang === 'es') ?'Contacto' : 'Contato'}</Link></Menu.Item>
+                    <Menu.Item key="projecto-hermanitos"><Link to={this.props.text['menu-3']['link']}>{this.props.text['menu-3']['label']}</Link></Menu.Item>
+                    <Menu.Item key="galeria"><Link to={this.props.text['menu-4']['link']}>{this.props.text['menu-4']['label']}</Link></Menu.Item>
+                    <Menu.Item key="ofrecer-emprego"><Link to={this.props.text['menu-5']['link']}>{this.props.text['menu-5']['label']}</Link></Menu.Item>
+                    <Menu.Item key="contato"><Link to={this.props.text['menu-6']['link']}>{this.props.text['menu-6']['label']}</Link></Menu.Item>
                   </Menu>
                   <Menu
                     mode="horizontal"
@@ -83,6 +85,7 @@ export default class NavMenu extends Component {
                   >
                     <Menu.Item key="es"><Button type="link" className="btn-lang" id="es"></Button></Menu.Item>
                     <Menu.Item key="pt"><Button type="link" className="btn-lang" id="pt"></Button></Menu.Item>
+                    <Menu.Item key="en"><Button type="link" className="btn-lang" id="en"></Button></Menu.Item>
                   </Menu>
             </div>
             <div className="social-bar">
@@ -90,11 +93,11 @@ export default class NavMenu extends Component {
                 mode="horizontal"
                 className="redes-sociales"
               >
-                <Menu.Item key="1"><a href="https://www.facebook.com/EspacoHermanitos/"><FacebookOutlined className="icon-social"/></a></Menu.Item>
-                <Menu.Item key="2"><a href="https://www.instagram.com/espaco_hermanitos/"><InstagramOutlined className="icon-social"/></a></Menu.Item>
-                <Menu.Item key="3"><a href="https://api.whatsapp.com/send?phone=5592994315431"><WhatsAppOutlined className="icon-social"/></a></Menu.Item>
-                <Menu.Item key="4"><a href="https://www.linkedin.com/company/espacohermanitos/about/"><LinkedinOutlined className="icon-social"/></a></Menu.Item>
-                <Menu.Item key="5"><a href="tel:+5592994315431"><PhoneOutlined className="icon-social"/></a></Menu.Item>
+                <Menu.Item key="1"><a href={this.props.redes['facebook']}><FacebookOutlined className="icon-social"/></a></Menu.Item>
+                <Menu.Item key="2"><a href={this.props.redes['instagram']}><InstagramOutlined className="icon-social"/></a></Menu.Item>
+                <Menu.Item key="3"><a href={this.props.redes['whatsapp'][0]}><WhatsAppOutlined className="icon-social"/></a></Menu.Item>
+                <Menu.Item key="4"><a href={this.props.redes['linkedin']}><LinkedinOutlined className="icon-social"/></a></Menu.Item>
+                <Menu.Item key="5"><a href={this.props.redes['tel'][0]}><PhoneOutlined className="icon-social"/></a></Menu.Item>
               </Menu>
             </div>
       </Header>

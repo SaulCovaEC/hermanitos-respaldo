@@ -220,6 +220,10 @@ ul.ant-pagination.ant-table-pagination {
   background-image: url(./img/component/brasil.svg);
 }
 
+#header-section #nav-menu .idioma #en {
+  background-image: url(./img/component/eeuu.svg);
+}
+
 /* Inicio */
 #home #slider {
   height: 600px;
@@ -355,9 +359,26 @@ ul.ant-pagination.ant-table-pagination {
   box-shadow: 1px 1px 5px 0px #8c8c8c;
 }
 
-#mapa {
+#home #mapa {
   width: 100%;
   height: 300px;
+}
+
+#contacto {
+  margin-top: 100px;
+}
+
+#contact-title {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: var(--azul);
+  color: #fff;
+}
+
+#contacto #mapa {
+  width: 100%;
+  height: 450px;
 }
 
 .logo-img {

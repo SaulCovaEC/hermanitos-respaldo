@@ -39,7 +39,6 @@ export default class Login extends Component {
       }
     })
       .then(res => {
-        console.log(data);
         return (res.ok)
         ? res.json()
         : Promise.reject({ status: res.status, statusText: res.statusText })

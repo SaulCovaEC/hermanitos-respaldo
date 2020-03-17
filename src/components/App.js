@@ -3,6 +3,7 @@ import Routes from "./Routes/Routes";
 import { ifSesion, logout, updateLang, ifLang } from "./helpers/Auth";
 import { Layout } from 'antd';
 import { UnlockFilled } from '@ant-design/icons';
+import { text, info } from './helpers/Translate';
 
 import {
   //BrowserRouter as Router,
@@ -26,7 +27,8 @@ class App extends Component {
       isAuthenticated: false,
       isAuthenticating: true,
       location: '',
-      lang: ''
+      lang: '',
+      text: []
     };
     this.userHasAuthenticated = this.userHasAuthenticated.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
@@ -57,7 +59,8 @@ class App extends Component {
 
   changeLang = btnLang => {
     this.setState({
-      lang: btnLang
+      lang: btnLang,
+      text: text[btnLang]
     });
     updateLang(btnLang);
   }
@@ -73,14 +76,16 @@ class App extends Component {
       isAuthenticated: this.state.isAuthenticated,
       userHasAuthenticated: this.userHasAuthenticated,
       location: this.updateLocation,
-      lang: this.state.lang
+      lang: this.state.lang,
+      text: this.state.text,
+      redes: info['redes']
     }
     let url = window.location.pathname;
     return (
       !this.state.isAuthenticating &&
       <Layout>
         {
-          (url.slice(0, 6) === '/admin') ? <div><AdminMenu /><Header style={{ background: '#fff', padding: 0 }}><button id="logout" className="default-btn" onClick={this.handleLogout}><UnlockFilled /></button></Header></div> : <NavMenu lang={this.state.lang} changeLang={this.changeLang} location={this.state.location} updateLocation={this.updateLocation}/>
+          (url.slice(0, 6) === '/admin') ? <div><AdminMenu /><Header style={{ background: '#fff', padding: 0 }}><button id="logout" className="default-btn" onClick={this.handleLogout}><UnlockFilled /></button></Header></div> : <NavMenu lang={this.state.lang} changeLang={this.changeLang} location={this.state.location} updateLocation={this.updateLocation} text={this.state.text} redes={info['redes']}/>
         }
       
           <section id="body-section">
