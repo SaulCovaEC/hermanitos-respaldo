@@ -113,6 +113,15 @@ ul.ant-pagination.ant-table-pagination {
   background-color: unset;
 }
 
+#menu-show {
+  margin-right: 15px;
+  background-color: var(--azul);
+  font-size: 20px;
+  line-height: 20px;
+  padding: 10px 15px;
+  height: auto;
+}
+
 #header-section #nav-menu {
   position: fixed;
   width: 100%;
@@ -121,7 +130,6 @@ ul.ant-pagination.ant-table-pagination {
   z-index: 1;
   background-color: #fff;
   color: var(--azul);
-  height: 50px;
   justify-content: space-between;
   display: inline-flex;
 }
@@ -133,8 +141,8 @@ ul.ant-pagination.ant-table-pagination {
   background-size: contain;
   background-position: center;
   width: auto;
-  height: 50px;
-  margin: auto;
+  height: 30px;
+  margin: 10px 0;
 }
 
 #header-section #nav-menu .logo {
@@ -238,7 +246,7 @@ ul.ant-pagination.ant-table-pagination {
   margin: 0 15px;
 }
 
-#header-section #nav-menu .idioma, #header-section #nav-menu  .idioma .ant-menu-item {
+#header-section #nav-menu .idioma, #header-section #nav-menu .idioma .ant-menu-item {
   height: inherit;
 }
 
@@ -250,16 +258,25 @@ ul.ant-pagination.ant-table-pagination {
   background-position: center;
 }
 
-#header-section #nav-menu .idioma #es {
+#header-section #nav-menu .idioma #es, button#es {
   background-image: url(./img/component/venezuela.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-#header-section #nav-menu .idioma #pt {
+#header-section #nav-menu .idioma #pt, button#pt {
   background-image: url(./img/component/brasil.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-#header-section #nav-menu .idioma #en {
+#header-section #nav-menu .idioma #en, button#en {
   background-image: url(./img/component/eeuu.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* Inicio */
