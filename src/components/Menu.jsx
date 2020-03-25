@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Layout, Button } from 'antd';
+import { Row, Col, Menu, Layout, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { FacebookOutlined, InstagramOutlined, WhatsAppOutlined, LinkedinOutlined, PhoneOutlined } from '@ant-design/icons';
 
@@ -40,11 +40,11 @@ export default class NavMenu extends Component {
   render() {
     return (
       <Header id="header-section" className={(window.location.pathname === '/login') ? 'oculto' : ''}>
-
-            <div id="nav-menu">
-                  <div className="logo">
+            <Row id="nav-menu">
+                <Col lg={4} sm={24} className="logo">
                     <div className="logo-img" />
-                  </div>
+                </Col>
+                <Col lg={15} sm={24}>
                   <Menu
                     mode="horizontal"
                     className="navmenu"
@@ -77,6 +77,8 @@ export default class NavMenu extends Component {
                     <Menu.Item key="ofrecer-emprego"><Link to={this.props.text['menu-5']['link']}>{this.props.text['menu-5']['label']}</Link></Menu.Item>
                     <Menu.Item key="contato"><Link to={this.props.text['menu-6']['link']}>{this.props.text['menu-6']['label']}</Link></Menu.Item>
                   </Menu>
+                </Col>
+                <Col lg={5} sm={24}>
                   <Menu
                     mode="horizontal"
                     className="idioma"
@@ -87,19 +89,25 @@ export default class NavMenu extends Component {
                     <Menu.Item key="pt"><Button type="link" className="btn-lang" id="pt"></Button></Menu.Item>
                     <Menu.Item key="en"><Button type="link" className="btn-lang" id="en"></Button></Menu.Item>
                   </Menu>
-            </div>
-            <div className="social-bar">
-              <Menu
-                mode="horizontal"
-                className="redes-sociales"
-              >
-                <Menu.Item key="1"><a href={this.props.redes['facebook']}><FacebookOutlined className="icon-social"/></a></Menu.Item>
-                <Menu.Item key="2"><a href={this.props.redes['instagram']}><InstagramOutlined className="icon-social"/></a></Menu.Item>
-                <Menu.Item key="3"><a href={this.props.redes['whatsapp'][0]}><WhatsAppOutlined className="icon-social"/></a></Menu.Item>
-                <Menu.Item key="4"><a href={this.props.redes['linkedin']}><LinkedinOutlined className="icon-social"/></a></Menu.Item>
-                <Menu.Item key="5"><a href={this.props.redes['tel'][0]}><PhoneOutlined className="icon-social"/></a></Menu.Item>
-              </Menu>
-            </div>
+                </Col>
+            </Row>
+            <Row className="social-bar" justify="space-between">
+              <Col lg={4} sm={0} className="logo">
+                <div className="logo-img" />
+              </Col>
+              <Col lg={20} sm={0}>
+                <Menu
+                  mode="horizontal"
+                  className="redes-sociales"
+                  >
+                  <Menu.Item key="1"><a href={this.props.redes['facebook']}><FacebookOutlined className="icon-social"/></a></Menu.Item>
+                  <Menu.Item key="2"><a href={this.props.redes['instagram']}><InstagramOutlined className="icon-social"/></a></Menu.Item>
+                  <Menu.Item key="3"><a href={this.props.redes['whatsapp'][0]}><WhatsAppOutlined className="icon-social"/></a></Menu.Item>
+                  <Menu.Item key="4"><a href={this.props.redes['linkedin']}><LinkedinOutlined className="icon-social"/></a></Menu.Item>
+                  <Menu.Item key="5"><a href={this.props.redes['tel'][0]}><PhoneOutlined className="icon-social"/></a></Menu.Item>
+                </Menu>
+              </Col>
+            </Row>
       </Header>
     );
   }

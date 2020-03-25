@@ -73,8 +73,9 @@ export default class Contacto extends Component {
         <div className="map">
           <iframe id="mapa" title="Mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.0256844895443!2d-60.01512628555877!3d-3.0878183411144224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c1bb6e6e04aa3%3A0xaa1055237a454ef9!2sEspa%C3%A7o%20Hermanitos!5e0!3m2!1ses-419!2sbr!4v1583271700375!5m2!1ses-419!2sbr"/>
         </div>
-        <Row id="datos">
-          <Col lg={12} sm={24}>
+        <Row id="datos" justify="space-around" align="middle">
+          <Col lg={11} sm={24} id="form-contact">
+            <p>{this.props.text['form-title']}</p>
             <Form {...formItemLayout} onFinish={enviar}>
               <Form.Item
                 label={this.props.text['form-nombre']}
@@ -118,8 +119,9 @@ export default class Contacto extends Component {
             </Form>
           </Col>
 
-          <Col lg={12} sm={24}>
-
+          <Col lg={11} sm={24}>
+            <p id="cita">“{this.props.text['cita-1']}”</p>
+            <p id="autor">{this.props.text['autor-cita-1']}</p>
           </Col>
         </Row>
       </section>

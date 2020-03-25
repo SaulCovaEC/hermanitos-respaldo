@@ -63,32 +63,30 @@ export default class Home extends Component {
       <section id="home">
         <Slider />
         <div className="proyecto">
-          <Divider className="title-section">{(this.props.lang === 'es') ? `Conozca el proyecto` : `Conheça o projeto`}</Divider>
+          <Divider className="title-section">{this.props.text['home-title-1']}</Divider>
           <Row justify="space-around" align="middle">
-            <Col span={11}>
-            <p className="text-important">{(this.props.lang === 'es') ? `Estamos aquí para acoger e integrar a nuestros hermanos venezolanos en Manaos, contribuyendo a su desarrollo y mejora de la calidad de vida.
-            Traemos informaciones, servicios de ciudadanía, noticias y conectamos oportunidades para quien busca trabajar y para quien busca un perfil profesional calificado.` : `Estamos aqui para acolher e integrar nossos irmãos venezuelanos em Manaus, contribuindo para o desenvolvimento e melhoria da qualidade de vida.
-                         Trazemos informações, serviços de cidadania, notícias e conectamos oportunidades para quem quer trabalhar e para quem procura um perfil profissional qualificado.`}</p>
-            <p className="text-enfasis">{(this.props.lang === 'es') ? `¡Bienvenido a hermanito!` : `Bem-vindo ao hemanito!`}</p>
+            <Col lg={11} sm={24}>
+            <p className="text-important">{this.props.text['home-text-1-1']}</p>
+            <p className="text-enfasis">{this.props.text['home-text-1-2']}</p>
             </Col>
-            <Col span={11}>
+            <Col lg={11} sm={24}>
             <iframe width="580" title="Video Bienvenida" height="320" src="https://www.youtube.com/embed/7B3GoEzFSX0" frameBorder="0" allowFullScreen/>
             </Col>
           </Row>
         </div>
         <div className="oportunidades">
           <Row justify="space-around" align="middle">
-            <Col span={12} className="registrar-curriculo">
-              <p className="title">{(this.props.lang === 'es') ? `Buscando Oportunidad` : `Procurando Oportunidade`}</p>
-              <p className="subtitle">{(this.props.lang === 'es') ? `Registra tu curriculo` : `Registre seu currículo`}</p>
+            <Col lg={12} sm={24} className="registrar-curriculo">
+              <p className="title">{this.props.text['home-title-2-1']}</p>
+              <p className="subtitle">{this.props.text['home-text-2-1']}</p>
               <button className="btn-icon btn-registrar-curriculo" onClick={this.registrarCurriculo}>
                 <FontAwesomeIcon icon={faAddressCard} className="front-icon" fixedWidth/>
                 <FontAwesomeIcon icon={faAddressCard} className="back-icon" fixedWidth/>
               </button>
             </Col>
-            <Col span={12} className="registrar-empleo">
-              <p className="title">{(this.props.lang === 'es') ? `Encontrar Profesionales` : `Encontre Profissionais`}</p>
-              <p className="subtitle">{(this.props.lang === 'es') ? `Solicitar indicaciones` : `Solicitar instruções`}</p>
+            <Col lg={12} sm={24} className="registrar-empleo">
+              <p className="title">{this.props.text['home-title-2-2']}</p>
+              <p className="subtitle">{this.props.text['home-text-2-2']}</p>
               <button className="btn-icon btn-registrar-empleo" onClick={this.registrarEmpleo}>
                 <FontAwesomeIcon icon={faUserGraduate} className="front-icon" fixedWidth/>
                 <FontAwesomeIcon icon={faUserGraduate} className="back-icon" fixedWidth/>
@@ -98,84 +96,84 @@ export default class Home extends Component {
         </div>
         <div className="informacion">
           <Divider orientation="left">
-          {(this.props.lang === 'es') ? `Informacion importante` : `Informação importante`}
+          {this.props.text['home-title-3']}
           </Divider>
           <Row>
-            <Col className="gutter-row" span={8}>
+            <Col className="gutter-row" lg={8} sm={24}>
               <div className="card-info">
               <Card
                 hoverable
                 cover={<img alt="Conociendo tu espacio" src="./img/component/conociendo-tu-espacio.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/conociendo-tu-espacio` : `/conhecendo-seu-espaco`}>{this.masInfo()}</Link>
+                  <Link to={this.props.text['home-grid-link-1']}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title={(this.props.lang === 'es') ? `CONOCIENDO TU ESPACIO` : `CONHECENDO O SEU ESPAÇO`} description={(this.props.lang === 'es') ? `Acabo de llegar a un lugar nuevo? ¡Información para ayudarlo a situarse y adaptarse!` : `Acabei de chegar em um novo lugar? Informações para ajudá-lo a se posicionar e se adaptar!`} />
+                <Meta title={this.props.text['home-grid-title-1']} description={this.props.text['home-grid-text-1']} />
               </Card>
               </div>
             </Col>
-            <Col className="gutter-row" span={8}>
+            <Col className="gutter-row" lg={8} sm={24}>
               <div className="card-info">
               <Card
                 hoverable
                 cover={<img alt="Cultura y convivencia" src="./img/component/cultura-y-convivencia.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/cultura-y-convivencia` : `/cultura-e-convivencia`}>{this.masInfo()}</Link>
+                  <Link to={this.props.text['home-grid-link-2']}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title={(this.props.lang === 'es') ? `CULTURA Y CONVIVENCIA` : `CULTURA E CONVIVÊNCIA`} description={(this.props.lang === 'es') ? `Un nuevo país tiene normas y culturas diferentes a las suyas. Comprende aquí un poco sobre Brasil.` : `Um novo país tem normas e culturas diferentes das suas. Entenda aqui um pouco sobre o Brasil.` } />
+                <Meta title={this.props.text['home-grid-title-2']} description={this.props.text['home-grid-text-2']} />
               </Card>
               </div>
             </Col>
-            <Col className="gutter-row" span={8}>
+            <Col className="gutter-row" lg={8} sm={24}>
               <div className="card-info">
               <Card
                 hoverable
                 cover={<img alt="Documentacion" src="./img/component/documentacion.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/documentacion` : `/documentacao`}>{this.masInfo()}</Link>
+                  <Link to={this.props.text['home-grid-link-3']}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title={(this.props.lang === 'es') ? `DOCUMENTACIÓN` : `DOCUMENTAÇÃO`} description={(this.props.lang === 'es') ? `Documentación requerida para vivir en Brasil. Lo que necesitas saber para vivir legalmente.` : `Documentação necessária para morar no Brasil. O que você precisa saber para viver legalmente.`} />
+                <Meta title={this.props.text['home-grid-title-3']} description={this.props.text['home-grid-text-3']} />
               </Card>
               </div>
             </Col>
-            <Col className="gutter-row" span={8}>
+            <Col className="gutter-row" lg={8} sm={24}>
               <div className="card-info">
               <Card
                 hoverable
                 cover={<img alt="Trabajo" src="./img/component/trabajo.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/trabajo` : `/trabalho`}>{this.masInfo()}</Link>
+                  <Link to={this.props.text['home-grid-link-4']}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title={(this.props.lang === 'es') ? `TRABAJO` : `TRABALHO`} description={(this.props.lang === 'es') ? `El trabajo es esencial para su mantenimiento en Brasil. Consejos sobre cómo buscar oportunidades e ingresar al mercado laboral.` : `O trabalho é essencial para sua manutenção no Brasil. Dicas sobre como procurar oportunidades e entrar no mercado de trabalho.`} />
+                <Meta title={this.props.text['home-grid-title-4']} description={this.props.text['home-grid-text-4']} />
               </Card>
               </div>
             </Col>
-            <Col className="gutter-row" span={8}>
+            <Col className="gutter-row" lg={8} sm={24}>
               <div className="card-info">
               <Card
                 hoverable
                 cover={<img alt="Salud" src="./img/component/salud.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/salud` : `/saude`}>{this.masInfo()}</Link>
+                  <Link to={this.props.text['home-grid-link-5']}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title={(this.props.lang === 'es') ? `SALUD` : `SAÚDE`} description={(this.props.lang === 'es') ? `El Sistema de Salud de Brasil es gratuito, pero necesita la tarjeta SUS para acceder a los servicios.` : `O sistema de saúde brasileiro é gratuito, mas você precisa do cartão SUS para acessar os serviços.`} />
+                <Meta title={this.props.text['home-grid-title-5']} description={this.props.text['home-grid-text-5']} />
               </Card>
               </div>
             </Col>
-            <Col className="gutter-row" span={8}>
+            <Col className="gutter-row" lg={8} sm={24}>
               <div className="card-info">
               <Card
                 hoverable
                 cover={<img alt="Educacion" src="./img/component/educacion.jpg" />}
                 actions={[
-                  <Link to={(this.props.lang === 'es') ? `/educacion` : `/educacao`}>{this.masInfo()}</Link>
+                  <Link to={this.props.text['home-grid-link-6']}>{this.masInfo()}</Link>
                 ]}
               >
-                <Meta title={(this.props.lang === 'es') ? `EDUCACIÓN` : `EDUCAÇÃO`} description={(this.props.lang === 'es') ? `La educación en Brasil es un derecho, incluso para los inmigrantes. Importante saber los lugares y el período de registro.` : `A educação no Brasil é um direito, mesmo para imigrantes. Importante conhecer os locais e o período de inscrição.`} />
+                <Meta title={this.props.text['home-grid-title-6']} description={this.props.text['home-grid-text-6']} />
               </Card>
               </div>
             </Col>
