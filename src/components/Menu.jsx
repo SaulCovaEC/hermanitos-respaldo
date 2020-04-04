@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Row, Col, Menu, Drawer, Layout, Button, Divider } from 'antd';
+import { Row, Col, Menu, Drawer, Layout, Button } from 'antd';
 import { Link } from 'react-router-dom';
-import { FacebookOutlined, InstagramOutlined, WhatsAppOutlined, LinkedinOutlined, PhoneOutlined } from '@ant-design/icons';
+import { FacebookOutlined, InstagramOutlined, WhatsAppOutlined, LinkedinOutlined, PhoneOutlined, CaretDownFilled } from '@ant-design/icons';
 
 
 const { Header } = Layout;
@@ -37,6 +37,7 @@ export default class NavMenu extends Component {
   handleClick = e => {
     this.setState({
       current: e.key,
+      visible: false,
     });
     this.props.updateLocation(e.key);
   };
@@ -44,8 +45,31 @@ export default class NavMenu extends Component {
   updateLang = e => {
     this.props.changeLang(e.key);
   };
+  menu = () => {
+
+  }
 
   render() {
+    let text = this.props.text['nav-menu'];
+    let menu = (<Menu
+      mode="horizontal"
+      className="navmenu"
+      onClick={this.handleClick}
+      selectedKeys={[this.props.location]}
+    >
+      {text.map((value, key) => {
+          return (value['submenu']
+            ? <SubMenu key={key} title={<span className="submenu">{value['label']} <CaretDownFilled /></span>}>
+              {value['submenu'].map((subvalue) => {
+                return <Menu.Item key={subvalue['key']}><Link to={subvalue['link']}>{subvalue['label']}</Link></Menu.Item>
+              })}
+            </SubMenu>
+            : <Menu.Item key={value['key']}><Link to={value['link']}>{value['label']}</Link></Menu.Item>
+          )
+        })
+      }
+    </Menu>);
+
     return (
       <Header id="header-section" className={(window.location.pathname === '/login') ? 'oculto' : ''}>
         <Row id="nav-menu">
@@ -53,38 +77,7 @@ export default class NavMenu extends Component {
             <div className="logo-img" />
           </Col>
           <Col xs={0} sm={0} md={0} lg={15} xl={15}>
-            <Menu
-              mode="horizontal"
-              className="navmenu"
-              onClick={this.handleClick}
-              selectedKeys={[this.props.location]}
-            >
-              <Menu.Item key="inicio"><Link to={this.props.text['menu-1']['link']}>{this.props.text['menu-1']['label']}</Link></Menu.Item>
-              <SubMenu title={this.props.text['menu-2']['label']}>
-                <Menu.Item key="conhecendo-seu-espaco">
-                  <Link to={this.props.text['menu-2-1']['link']}>{this.props.text['menu-2-1']['label']}</Link>
-                </Menu.Item>
-                <Menu.Item key="cultura-e-convivencia">
-                  <Link to={this.props.text['menu-2-2']['link']}>{this.props.text['menu-2-2']['label']}</Link>
-                </Menu.Item>
-                <Menu.Item key="documentacao">
-                  <Link to={this.props.text['menu-2-3']['link']}>{this.props.text['menu-2-3']['label']}</Link>
-                </Menu.Item>
-                <Menu.Item key="trabalho">
-                  <Link to={this.props.text['menu-2-4']['link']}>{this.props.text['menu-2-4']['label']}</Link>
-                </Menu.Item>
-                <Menu.Item key="saude">
-                  <Link to={this.props.text['menu-2-5']['link']}>{this.props.text['menu-2-5']['label']}</Link>
-                </Menu.Item>
-                <Menu.Item key="educacao">
-                  <Link to={this.props.text['menu-2-6']['link']}>{this.props.text['menu-2-6']['label']}</Link>
-                </Menu.Item>
-              </SubMenu>
-              <Menu.Item key="projecto-hermanitos"><Link to={this.props.text['menu-3']['link']}>{this.props.text['menu-3']['label']}</Link></Menu.Item>
-              <Menu.Item key="galeria"><Link to={this.props.text['menu-4']['link']}>{this.props.text['menu-4']['label']}</Link></Menu.Item>
-              <Menu.Item key="ofrecer-emprego"><Link to={this.props.text['menu-5']['link']}>{this.props.text['menu-5']['label']}</Link></Menu.Item>
-              <Menu.Item key="contato"><Link to={this.props.text['menu-6']['link']}>{this.props.text['menu-6']['label']}</Link></Menu.Item>
-            </Menu>
+            {menu}
           </Col>
           <Col xs={0} sm={0} md={0} lg={5} xl={5}>
             <Menu
@@ -109,49 +102,7 @@ export default class NavMenu extends Component {
               onClose={this.onClose}
               visible={this.state.visible}
             >
-              <Menu
-                  mode="vertical"
-                  className="navmenu"
-                  onClick={this.handleClick}
-                  selectedKeys={[this.props.location]}
-                >
-                  <Menu.Item key="inicio"><Link to={this.props.text['menu-1']['link']}>{this.props.text['menu-1']['label']}</Link></Menu.Item>
-                  <SubMenu title={this.props.text['menu-2']['label']}>
-                    <Menu.Item key="conhecendo-seu-espaco">
-                      <Link to={this.props.text['menu-2-1']['link']}>{this.props.text['menu-2-1']['label']}</Link>
-                    </Menu.Item>
-                    <Menu.Item key="cultura-e-convivencia">
-                      <Link to={this.props.text['menu-2-2']['link']}>{this.props.text['menu-2-2']['label']}</Link>
-                    </Menu.Item>
-                    <Menu.Item key="documentacao">
-                      <Link to={this.props.text['menu-2-3']['link']}>{this.props.text['menu-2-3']['label']}</Link>
-                    </Menu.Item>
-                    <Menu.Item key="trabalho">
-                      <Link to={this.props.text['menu-2-4']['link']}>{this.props.text['menu-2-4']['label']}</Link>
-                    </Menu.Item>
-                    <Menu.Item key="saude">
-                      <Link to={this.props.text['menu-2-5']['link']}>{this.props.text['menu-2-5']['label']}</Link>
-                    </Menu.Item>
-                    <Menu.Item key="educacao">
-                      <Link to={this.props.text['menu-2-6']['link']}>{this.props.text['menu-2-6']['label']}</Link>
-                    </Menu.Item>
-                  </SubMenu>
-                  <Menu.Item key="projecto-hermanitos"><Link to={this.props.text['menu-3']['link']}>{this.props.text['menu-3']['label']}</Link></Menu.Item>
-                  <Menu.Item key="galeria"><Link to={this.props.text['menu-4']['link']}>{this.props.text['menu-4']['label']}</Link></Menu.Item>
-                  <Menu.Item key="ofrecer-emprego"><Link to={this.props.text['menu-5']['link']}>{this.props.text['menu-5']['label']}</Link></Menu.Item>
-                  <Menu.Item key="contato"><Link to={this.props.text['menu-6']['link']}>{this.props.text['menu-6']['label']}</Link></Menu.Item>
-                </Menu>
-                <Divider/>
-                <Menu
-                  mode="vertical"
-                  className="idioma"
-                  onClick={this.updateLang}
-                  selectedKeys={[this.props.lang]}
-                >
-                  <Menu.Item key="es"><Button type="link" className="btn-lang" id="es"></Button></Menu.Item>
-                  <Menu.Item key="pt"><Button type="link" className="btn-lang" id="pt"></Button></Menu.Item>
-                  <Menu.Item key="en"><Button type="link" className="btn-lang" id="en"></Button></Menu.Item>
-                </Menu>
+              {menu}
               </Drawer>
             </Col>
         </Row>

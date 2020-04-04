@@ -4,7 +4,13 @@ import AppliedRoute from "./AppliedRoute";
 import AuthenticatedRoute from "./AuthenticatedRoute";
 import UnauthenticatedRoute from "./UnauthenticatedRoute";
 import Inicio from "../pages/";
-import Informacion from "../pages/Informacion";
+import ConociendoTuEspacio from "../pages/ConociendoTuEspacio";
+import CulturaYConvivencia from "../pages/CulturaYConvivencia";
+import Documentacion from "../pages/Documentacion";
+import Trabajo from "../pages/Trabajo";
+import Salud from "../pages/Salud";
+import Educacion from "../pages/Educacion";
+
 import ProyectoHermanitos from "../pages/ProyectoHermanitos";
 import Galeria from "../pages/Galeria";
 import OfrecerEmpleo from "../pages/OfrecerEmpleo";
@@ -18,36 +24,36 @@ export default ({ childProps }) =>
   <Switch>
     <AppliedRoute path="/" exact component={Inicio} props={childProps} />
     {/* Enlaces en español */}
-    <AppliedRoute path="/conociendo-tu-espacio" exact component={Informacion} props={childProps} pLocation={'conhecendo-seu-espaco'}/>
-    <AppliedRoute path="/cultura-y-convivencia" exact component={Informacion} props={childProps} pLocation={'cultura-e-convivencia'} />
-    <AppliedRoute path="/documentacion" exact component={Informacion} props={childProps} pLocation={'documentacao'} />
-    <AppliedRoute path="/trabajo" exact component={Informacion} props={childProps} pLocation={'trabalho'} />
-    <AppliedRoute path="/salud" exact component={Informacion} props={childProps} pLocation={'saude'} />
-    <AppliedRoute path="/educacion" exact component={Informacion} props={childProps} pLocation={'educacao'} />
+    <AppliedRoute path="/conociendo-tu-espacio" exact component={ConociendoTuEspacio} props={childProps} pLocation={'conhecendo-seu-espaco'}/>
+    <AppliedRoute path="/cultura-y-convivencia" exact component={CulturaYConvivencia} props={childProps} pLocation={'cultura-e-convivencia'} />
+    <AppliedRoute path="/documentacion" exact component={Documentacion} props={childProps} pLocation={'documentacao'} />
+    <AppliedRoute path="/trabajo" exact component={Trabajo} props={childProps} pLocation={'trabalho'} />
+    <AppliedRoute path="/salud" exact component={Salud} props={childProps} pLocation={'saude'} />
+    <AppliedRoute path="/educacion" exact component={Educacion} props={childProps} pLocation={'educacao'} />
 
     <AppliedRoute path="/proyecto-hermanitos" exact component={ProyectoHermanitos} props={childProps} />
     <AppliedRoute path="/ofrecer-empleo" exact component={OfrecerEmpleo} props={childProps} />
     <AppliedRoute path="/contacto" exact component={Contacto} props={childProps} />
     
     {/* Enlaces en portugues */}
-    <AppliedRoute path="/conhecendo-seu-espaco" exact component={Informacion} props={childProps} pLocation={'conhecendo-seu-espaco'} />
-    <AppliedRoute path="/cultura-e-convivencia" exact component={Informacion} props={childProps} pLocation={'cultura-e-convivencia'} />
-    <AppliedRoute path="/documentacao" exact component={Informacion} props={childProps} pLocation={'documentacao'} />
-    <AppliedRoute path="/trabalho" exact component={Informacion} props={childProps} pLocation={'trabalho'} />
-    <AppliedRoute path="/saude" exact component={Informacion} props={childProps} pLocation={'saude'} />
-    <AppliedRoute path="/educacao" exact component={Informacion} props={childProps} pLocation={'educacao'} />
+    <AppliedRoute path="/conhecendo-seu-espaco" exact component={ConociendoTuEspacio} props={childProps} pLocation={'conhecendo-seu-espaco'} />
+    <AppliedRoute path="/cultura-e-convivencia" exact component={CulturaYConvivencia} props={childProps} pLocation={'cultura-e-convivencia'} />
+    <AppliedRoute path="/documentacao" exact component={Documentacion} props={childProps} pLocation={'documentacao'} />
+    <AppliedRoute path="/trabalho" exact component={Trabajo} props={childProps} pLocation={'trabalho'} />
+    <AppliedRoute path="/saude" exact component={Salud} props={childProps} pLocation={'saude'} />
+    <AppliedRoute path="/educacao" exact component={Educacion} props={childProps} pLocation={'educacao'} />
 
     <AppliedRoute path="/projeto-hermanitos" exact component={ProyectoHermanitos} props={childProps} />
     <AppliedRoute path="/ofrecer-emprego" exact component={OfrecerEmpleo} props={childProps} />
     <AppliedRoute path="/contato" exact component={Contacto} props={childProps} />
 
     {/* Enlaces en ingles */}
-    <AppliedRoute path="/knowing-your-space" exact component={Informacion} props={childProps} pLocation={'conhecendo-seu-espaco'} />
-    <AppliedRoute path="/culture-and-coexistence" exact component={Informacion} props={childProps} pLocation={'cultura-e-convivencia'} />
-    <AppliedRoute path="/documentation" exact component={Informacion} props={childProps} pLocation={'documentacao'} />
-    <AppliedRoute path="/work" exact component={Informacion} props={childProps} pLocation={'trabalho'} />
-    <AppliedRoute path="/health" exact component={Informacion} props={childProps} pLocation={'saude'} />
-    <AppliedRoute path="/education" exact component={Informacion} props={childProps} pLocation={'educacao'} />
+    <AppliedRoute path="/knowing-your-space" exact component={ConociendoTuEspacio} props={childProps} pLocation={'conhecendo-seu-espaco'} />
+    <AppliedRoute path="/culture-and-coexistence" exact component={CulturaYConvivencia} props={childProps} pLocation={'cultura-e-convivencia'} />
+    <AppliedRoute path="/documentation" exact component={Documentacion} props={childProps} pLocation={'documentacao'} />
+    <AppliedRoute path="/work" exact component={Trabajo} props={childProps} pLocation={'trabalho'} />
+    <AppliedRoute path="/health" exact component={Salud} props={childProps} pLocation={'saude'} />
+    <AppliedRoute path="/education" exact component={Educacion} props={childProps} pLocation={'educacao'} />
     
     <AppliedRoute path="/gallery" exact component={Galeria} props={childProps} />
     <AppliedRoute path="/project-hermanitos" exact component={ProyectoHermanitos} props={childProps} />

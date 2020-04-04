@@ -6,7 +6,7 @@ export default class ProyectoHermanitos extends Component {
   };
 
   componentDidMount() {
-    this.props.location('projecto-hermanitos');
+    this.props.location('proyecto-hermanitos');
   }
 
   

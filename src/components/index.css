@@ -65,12 +65,26 @@ section.ant-layout {
   background: #fff;
 }
 
+#root .ant-layout-header {
+  height: auto;
+  background: unset;
+}
+
+.bold {
+  font-weight: bold;
+  color: var(--azul);
+}
+
 /* -- Filtro de tablas -- */
 .ant-table-filter-dropdown-btns {
   display: inline-flex;
 }
 a.ant-table-filter-dropdown-link {
   padding: 5px;
+}
+
+#body-section {
+  margin-top: 50px;
 }
 
 /*----------------------------*/
@@ -103,7 +117,6 @@ ul.ant-pagination.ant-table-pagination {
 }
 
 #header-section {
-  position: absolute;
   width: 100%;
   z-index: 100;
   padding: 0;
@@ -134,7 +147,6 @@ ul.ant-pagination.ant-table-pagination {
   display: inline-flex;
 }
 
-
 #header-section #nav-menu .logo-img {
   background: url(./img/component/logo.png);
   background-repeat: no-repeat;
@@ -164,7 +176,6 @@ ul.ant-pagination.ant-table-pagination {
   margin-top: 50px;
 }
 
-
 #header-section .social-bar .logo-img {
   background: url(./img/component/logo-h.png);
   background-repeat: no-repeat;
@@ -174,7 +185,6 @@ ul.ant-pagination.ant-table-pagination {
   height: 80px;
   margin: auto;
 }
-
 
 #header-section .social-bar .logo {
   margin: auto;
@@ -279,6 +289,12 @@ ul.ant-pagination.ant-table-pagination {
   background-position: center;
 }
 
+#header-section .submenu span svg {
+  width: 10px;
+  margin: 0;
+  padding: 0;
+}
+
 /* Inicio */
 #home #slider {
   height: 600px;
@@ -348,14 +364,21 @@ ul.ant-pagination.ant-table-pagination {
   font-size: 50px;
   display: inline-flex;
   position: relative;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
   padding: 0;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: var(--azul);
+}
+
+.btn-icon svg {
+  margin: auto;
 }
 
 .btn-icon:hover {
-  transform: rotateY(180deg);
-  transform-origin: center;
+  border: 2px solid var(--azul);
+  color: var(--azul);
+  background-color: #fff;
 }
 
 .btn-icon:focus {
@@ -366,27 +389,20 @@ ul.ant-pagination.ant-table-pagination {
   background-color: var(--naranja);
 }
 
-.btn-icon .back-icon, .btn-icon .front-icon {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  height: inherit;
-  width: inherit;
-  border-radius: 50%;
-  padding: 20px;
-}
-
-.btn-icon .front-icon {
-  border: 2px solid var(--azul);
-  color: var(--azul);
-}
-
-.btn-icon .back-icon {
-  transform: rotateY(180deg);
-  margin-left: -100px;
-  background-color: var(--azul);
+.btn-add {
   color: #fff;
-  border: 2px solid #fff;
+}
 
+#btn-experiencia {
+  background-color: var(--rojo);
+}
+
+#btn-curso {
+  background-color: var(--verde);
+}
+
+#btn-formacion {
+  background-color: var(--azul);
 }
 
 .informacion {
@@ -405,20 +421,79 @@ ul.ant-pagination.ant-table-pagination {
   font-weight: bold;
 }
 
+#info-note {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.enfasis-text {
+  text-decoration: underline;
+  font-weight: 500;
+  color: var(--azul);
+}
+
 #home #mapa {
   width: 100%;
   height: 300px;
 }
 
-#contacto {
-  margin-top: 100px;
+#ofrecer-empleo {
+  margin-top: 50px;
 }
 
-#contact-title {
+.empleo-form .title {
+  text-align: center;
+  color: var(--azul);
+  font-size: 1.5rem;
+}
+
+#cultura-description .cultura-text p {
+  font-weight: 500;
+  color: #fff;
+}
+
+#cultura-description .cultura-text {
+  padding: 20px; 
+  background-color: rgba(0,0,0,0.8);
+}
+
+#cultura-description {
+  background-image: url('./img/cultura-y-convivencia-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#contacto {
+  margin-top: 50px;
+}
+
+#page-title {
+  margin-top: 50px;
   padding: 20px;
-  font-size: 24px;
+  font-size: 1.6rem;
   font-weight: bold;
   background-color: var(--azul);
+  color: #fff;
+}
+
+#page-title-2 {
+  margin-top: 50px;
+  padding: 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: var(--verde);
+  color: #fff;
+}
+
+#page-title-3 {
+  margin-top: 50px;
+  padding: 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: var(--rojo);
   color: #fff;
 }
 
@@ -426,7 +501,6 @@ ul.ant-pagination.ant-table-pagination {
   width: 100%;
   height: 450px;
 }
-
 
 header {
   text-align-last: end;
@@ -540,11 +614,21 @@ footer.ant-layout-footer {
 .footer {
   display: inline-flex;
   justify-content: space-between;
-  height: 50px;
+  line-height: 50px;
   left: 0;
   width: 100%;
   padding: 0 20px;
   align-items: center;
+}
+
+.footer .copyright{
+  text-align: center;
+  font-weight: bold;
+}
+
+.footer .redes-sociales {
+  text-align: end;
+  background-color: unset;
 }
 
 /*--- Components ---*/
@@ -564,6 +648,12 @@ footer.ant-layout-footer {
 
 .active {
   background-color: #717171;
+}
+
+.dynamic-delete-button {
+  line-height: 32px;
+  margin: auto;
+  padding: 0 5px;
 }
 
 /* Fading animation */

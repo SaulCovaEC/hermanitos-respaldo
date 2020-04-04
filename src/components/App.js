@@ -93,7 +93,7 @@ class App extends Component {
           </section>
         <Footer>
           {
-            (url.slice(0, 6) === '/admin') ? <FooterAdmin /> : <FooterNormal />
+            (url.slice(0, 6) === '/admin') ? <FooterAdmin /> : <FooterNormal text={this.state.text}/>
           }
         </Footer>
       </Layout>
