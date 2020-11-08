@@ -168,10 +168,11 @@ ul.ant-pagination.ant-table-pagination {
 }
 
 #lang-menu {
-  display: inline-grid;
-  justify-content: end;
   margin: auto;
-  text-align: end;
+}
+
+.idioma-responsive {
+  text-align: center;
 }
 
 #dropdown-lang {
@@ -214,6 +215,16 @@ ul.ant-pagination.ant-table-pagination {
 
 .idioma .ant-dropdown-menu-item-selected {
   background-color: #e3e3e3;
+}
+
+#menu-show {
+  position: fixed;
+  top: 25px;
+  right: 0px;
+  z-index: 1000;
+  height: 50px;
+  border: 2px solid #fff;
+  font-weight: bold;
 }
 
 #header-section .social-bar {

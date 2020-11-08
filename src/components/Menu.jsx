@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Row, Col, Menu, Drawer, Layout, Button, Dropdown } from 'antd';
+import { Row, Col, Menu, Drawer, Layout, Button, Dropdown, Divider } from 'antd';
 import { Link } from 'react-router-dom';
-import { DownOutlined, GlobalOutlined, FacebookOutlined, InstagramOutlined, WhatsAppOutlined, LinkedinOutlined, PhoneOutlined, CaretDownFilled } from '@ant-design/icons';
+import { CaretDownFilled } from '@ant-design/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -102,16 +102,27 @@ export default class NavMenu extends Component {
       }
     </Menu>);
 
+    let menuLangResponsive = (<Menu
+    mode="vertical"
+    className="idioma-responsive"
+    onClick={this.updateLang}
+    selectedKeys={[this.props.lang]}
+      >
+      <Menu.Item key="es"><Button type="link" className="btn-lang" id="es"></Button></Menu.Item>
+      <Menu.Item key="pt"><Button type="link" className="btn-lang" id="pt"></Button></Menu.Item>
+      <Menu.Item key="en"><Button type="link" className="btn-lang" id="en"></Button></Menu.Item>
+    </Menu>);
+
     return (
       <Header id="header-section" className={(window.location.pathname === '/login') ? 'oculto' : ''}>
-        <Row id="nav-menu" align="middle">
+        <Row id="nav-menu" align="middle" justify="space-between">
           <Col xs={24} sm={24} md={24} lg={4} xl={4} className="logo">
             <div className="logo-img" />
           </Col>
           <Col xs={0} sm={0} md={0} lg={15} xl={15}>
             {menu}
           </Col>
-          <Col xs={0} sm={0} md={0} lg={5} xl={5} id="lang-menu">
+          <Col xs={0} sm={0} md={0} lg={2} xl={2} id="lang-menu">
             <div id="dropdown-lang">  
               <Dropdown overlay={menuLang} trigger={['click']} overlayClassName="dropdown-content">
                 <Button>
@@ -130,9 +141,15 @@ export default class NavMenu extends Component {
               closable={false}
               onClose={this.onClose}
               visible={this.state.visible}
-            >
-              {menuResponsive}
-              </Drawer>
+            > 
+              <section>
+                {menuResponsive}
+              </section>
+              <Divider />
+              <section>
+                {menuLangResponsive}
+              </section>
+            </Drawer>
             </Col>
         </Row>
       </Header>
