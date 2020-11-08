@@ -145,25 +145,57 @@ ul.ant-pagination.ant-table-pagination {
   color: var(--azul);
   justify-content: space-between;
   display: inline-flex;
+  height: 100px;
 }
 
 #header-section #nav-menu .logo-img {
-  background: url(./img/component/logo.png);
+  background: url(./img/component/logo-h.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   width: auto;
-  height: 30px;
-  margin: 10px 0;
+  height: 80px;
+  margin: auto;
 }
 
 #header-section #nav-menu .logo {
   margin: auto;
-  padding: 0;
-  height: 40px;
-  width: 45px;
+  padding: 10px;
   z-index: 100;
   margin-top: 0;
+  height: 100px;
+  background-color: var(--azul);
+}
+
+#lang-menu {
+  display: inline-grid;
+  justify-content: end;
+  margin: auto;
+  text-align: end;
+}
+
+#dropdown-lang {
+  display: flex;
+  margin-right: 20px;
+  border: unset;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+#dropdown-lang .btn-lang {
+  margin: auto;
+  width: 35px;
+  border: unset;
+}
+
+#dropdown-lang svg {
+  margin: 0px 0px 0px 10px;
+}
+
+#dropdown-lang * {
+  border: unset;
+  margin: auto;
+  vertical-align: middle;
+  height: auto;
 }
 
 #header-section .social-bar {
@@ -176,14 +208,8 @@ ul.ant-pagination.ant-table-pagination {
   margin-top: 50px;
 }
 
-#header-section .social-bar .logo-img {
-  background: url(./img/component/logo-h.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  width: auto;
-  height: 80px;
-  margin: auto;
+.idioma li {
+  text-align: center;
 }
 
 #header-section .social-bar .logo {
@@ -250,39 +276,33 @@ ul.ant-pagination.ant-table-pagination {
   text-align: center;
 }
 
-#header-section svg {
-  font-size: 20px;
-  height: inherit;
-  margin: 0 15px;
-}
-
 #header-section #nav-menu .idioma, #header-section #nav-menu .idioma .ant-menu-item {
   height: inherit;
 }
 
-#header-section #nav-menu .idioma .btn-lang {
+#header-section #nav-menu .idioma .btn-lang, #dropdown-lang .btn-lang {
   height: 48px;
-  width: inherit;
+  width: 30px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#header-section #nav-menu .idioma #es, button#es {
+#header-section #nav-menu .idioma #es, #es {
   background-image: url(./img/component/venezuela.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#header-section #nav-menu .idioma #pt, button#pt {
+#header-section #nav-menu .idioma #pt, #pt {
   background-image: url(./img/component/brasil.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#header-section #nav-menu .idioma #en, button#en {
+#header-section #nav-menu .idioma #en, #en {
   background-image: url(./img/component/eeuu.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -338,6 +358,11 @@ ul.ant-pagination.ant-table-pagination {
 
 .title-section span {
   font-size: 24px;
+}
+
+form.ant-form {
+  max-width: 750px;
+  margin: auto;
 }
 
 .oportunidades .registrar-curriculo {
