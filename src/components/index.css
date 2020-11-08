@@ -346,7 +346,7 @@ ul.ant-pagination.ant-table-pagination {
 
 /* Inicio */
 #home #slider {
-  height: 600px;
+  height: auto;
   width: 100%;
   overflow: hidden;
 }
