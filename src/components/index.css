@@ -198,6 +198,20 @@ ul.ant-pagination.ant-table-pagination {
   height: auto;
 }
 
+.idioma {
+  position: fixed;
+  top: 80px;
+  width: 80px;
+}
+
+.ant-dropdown.dropdown-content.ant-dropdown-placement-bottomLeft {
+  top: 80px !important;
+}
+
+.idioma .ant-dropdown-menu-item-selected {
+  background-color: #e3e3e3;
+}
+
 #header-section .social-bar {
   position: absolute;
   background-color: rgba(0, 0, 0, .8);

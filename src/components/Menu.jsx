@@ -113,7 +113,7 @@ export default class NavMenu extends Component {
           </Col>
           <Col xs={0} sm={0} md={0} lg={5} xl={5} id="lang-menu">
             <div id="dropdown-lang">  
-              <Dropdown overlay={menuLang} placement="bottomRight" trigger={['click']}>
+              <Dropdown overlay={menuLang} trigger={['click']} overlayClassName="dropdown-content">
                 <Button>
                   <span id={[this.props.lang]} className="btn-lang"></span> <FontAwesomeIcon icon={faChevronDown}/>
                 </Button>
