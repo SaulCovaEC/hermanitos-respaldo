@@ -191,6 +191,10 @@ ul.ant-pagination.ant-table-pagination {
   margin: 0px 0px 0px 10px;
 }
 
+.btn-lang.ant-btn:empty {
+  visibility: visible;
+}
+
 #dropdown-lang * {
   border: unset;
   margin: auto;
