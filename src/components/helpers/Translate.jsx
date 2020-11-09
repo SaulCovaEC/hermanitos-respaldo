@@ -692,6 +692,7 @@ const text = {
 const info = {
   "redes": {
     "facebook": "https://www.facebook.com/EspacoHermanitos/",
+    "youtube": "https://www.youtube.com/channel/UCb4yQDg-oC_dU1_h3KhJc5w",
     "instagram": "https://www.instagram.com/espaco_hermanitos/",
     "whatsapp": ["https://api.whatsapp.com/send?phone=5592994315431"],
     "linkedin": "https://www.linkedin.com/company/espacohermanitos/about/",

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Row, Col, Divider, Card } from 'antd';
 import { Link } from "react-router-dom";
 
-import Slider from './Slider';
 import CadastrarCurriculo from './CadastrarCurriculo';
 import CadastrarVaga from './CadastrarVaga';
 
@@ -28,7 +27,6 @@ export default class Home extends Component {
     
     return (
       <section id="home">
-        <Slider />
         <div className="proyecto">
           <Divider className="title-section">{text['title-1']}</Divider>
           <Row justify="space-around" align="middle">
@@ -37,7 +35,7 @@ export default class Home extends Component {
               <p className="text-enfasis">{text['text-1-2']}</p>
             </Col>
             <Col xs={24} sm={24} md={24} lg={11} xl={11}>
-              <iframe width="580" title="Video Bienvenida" height="320" src="https://www.youtube.com/embed/7B3GoEzFSX0" frameBorder="0" allowFullScreen/>
+              <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7t-SDl4ID5A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </Col>
           </Row>
         </div>

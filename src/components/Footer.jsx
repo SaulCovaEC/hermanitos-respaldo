@@ -23,6 +23,9 @@ export default class FooterNormal extends Component {
             <Menu.Item key="5"><a href="tel:+5592994315431"><PhoneOutlined className="icon-social"/></a></Menu.Item>
           </Menu>
         </Col>
+        <Col xs={24} sm={24} md={24} lg={24} xl={24} id="progress">
+          <div id="scroll-progress"></div>
+        </Col>
       </Row>
     );
   }

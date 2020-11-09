@@ -75,6 +75,22 @@ section.ant-layout {
   color: var(--azul);
 }
 
+#progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 8px;
+  background-color: #f1f1f1;
+}
+
+#scroll-progress {
+  height: 8px;
+  background: var(--azul);
+  width: 0%;
+}
+
 /* -- Filtro de tablas -- */
 .ant-table-filter-dropdown-btns {
   display: inline-flex;
@@ -146,6 +162,7 @@ ul.ant-pagination.ant-table-pagination {
   justify-content: space-between;
   display: inline-flex;
   height: 100px;
+  box-shadow: 0 0 5px 1px rgb(0 0 0 / 25%);
 }
 
 #header-section #nav-menu .logo-img {
@@ -246,6 +263,35 @@ ul.ant-pagination.ant-table-pagination {
   left: 0;
   right: 0;
   margin-top: 50px;
+}
+
+#menu-social .fa-facebook-square path {
+  color: #1877f2;
+}
+
+#menu-social .fa-youtube path {
+  color: #ff0000;
+}
+
+
+#menu-social .fa-instagram path {
+  color: #7232bd;
+}
+
+#menu-social .fa-whatsapp path {
+  color: #075e54;
+}
+
+#menu-social .fa-linkedin path {
+  color: #007bb5;
+}
+
+#menu-social .fa-phone path {
+  color: #2b90d9;
+}
+
+#menu-social .ant-menu-item svg {
+  width: 18px;
 }
 
 .idioma li {

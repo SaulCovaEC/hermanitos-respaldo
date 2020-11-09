@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { CaretDownFilled } from '@ant-design/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faPhone } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faWhatsapp, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookSquare, faYoutube, faWhatsapp, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const { Header } = Layout;
 const { SubMenu } = Menu;
@@ -139,11 +139,12 @@ export default class NavMenu extends Component {
               mode="horizontal"
               className="redes-sociales"
             >
-              <Menu.Item key="1"><a href={this.props.redes['facebook']}><FontAwesomeIcon icon={faFacebook} className="icon-social"/></a></Menu.Item>
-              <Menu.Item key="2"><a href={this.props.redes['instagram']}><FontAwesomeIcon icon={faInstagram} className="icon-social"/></a></Menu.Item>
-              <Menu.Item key="3"><a href={this.props.redes['whatsapp'][0]}><FontAwesomeIcon icon={faWhatsapp} className="icon-social"/></a></Menu.Item>
-              <Menu.Item key="4"><a href={this.props.redes['linkedin']}><FontAwesomeIcon icon={faLinkedin} className="icon-social"/></a></Menu.Item>
-              <Menu.Item key="5"><a href={this.props.redes['tel'][0]}><FontAwesomeIcon icon={faPhone} className="icon-social"/></a></Menu.Item>
+              <Menu.Item key="1"><a href={this.props.redes['facebook']}><FontAwesomeIcon icon={faFacebookSquare} className="icon-social"/></a></Menu.Item>
+              <Menu.Item key="2"><a href={this.props.redes['youtube']}><FontAwesomeIcon icon={faYoutube} className="icon-social"/></a></Menu.Item>
+              <Menu.Item key="3"><a href={this.props.redes['instagram']}><FontAwesomeIcon icon={faInstagram} className="icon-social"/></a></Menu.Item>
+              <Menu.Item key="4"><a href={this.props.redes['whatsapp'][0]}><FontAwesomeIcon icon={faWhatsapp} className="icon-social"/></a></Menu.Item>
+              <Menu.Item key="5"><a href={this.props.redes['linkedin']}><FontAwesomeIcon icon={faLinkedin} className="icon-social"/></a></Menu.Item>
+              <Menu.Item key="6"><a href={this.props.redes['tel'][0]}><FontAwesomeIcon icon={faPhone} className="icon-social"/></a></Menu.Item>
             </Menu>
           </Col>
           <Col xs={24} sm={24} md={24} lg={0} xl={0} id="col-responsive-menu">
